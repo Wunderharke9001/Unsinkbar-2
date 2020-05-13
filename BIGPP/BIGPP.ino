@@ -12,6 +12,12 @@
    Saves the gameplay
    */
 int gay[5][5];
+/*
+State of button input
+0 = none
+1 = left
+2 = right
+*/
 int Knopf = 0;
 /*
   Y axis
