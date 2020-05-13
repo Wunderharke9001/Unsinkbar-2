@@ -9,7 +9,6 @@ void setup() {
    */
 int gay[2][5] = {{0,0,0,0,0}, {0,0,0,0,0}};
 int Knopf = 0;
-bool gedrückt = false;
 }
 
 void loop() {
