@@ -12,6 +12,12 @@
    Saves the gameplay
 */
 int gay[5][5];
+/*
+State of button input
+0 = none
+1 = left
+2 = right
+*/
 int Knopf = 0;
 /*
   Y axis
@@ -86,7 +92,10 @@ void loop()
 void CUM()
 { //überprüft, welche knöpfe gedrückt wurden
   string input = Serial.readString();
-  if(input == )
+  if(input == "left"){Knopf = 1; return;}
+  if(input == "right"){Knopf = 2; return;}
+  if(input == "reset"){reset_game(); return;}
+  return 0;
 }
 
 //functions
