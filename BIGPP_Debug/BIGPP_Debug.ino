@@ -46,6 +46,7 @@ void setup()
   reset_game();
   Serial.begin(9600);
   Serial.println("Hello World!");
+  display();
 }
 
 void loop()
@@ -157,13 +158,16 @@ void display()
     Serial.print("| ");
     for(int y = 0; y < 5; y++)
     {
-      Serial.print(gay[x][y]+" | ");
+      Serial.print(gay[x][y]);
+      Serial.print(" | ");
     }
     Serial.println();
     Serial.println();
   }
-  Serial.println("Current Row" + yeet);
+  Serial.print("Current Row ");
+  Serial.println(yeet);
   //Print player
-  Serial.println("Current player " + player);
+  Serial.print("Current player ");
+  Serial.println(player);
 
 }
