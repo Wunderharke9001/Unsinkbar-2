@@ -1,5 +1,3 @@
-//variables
-
 //left button
 #define Dleft 11
 //right button
@@ -67,9 +65,10 @@ void loop()
     player == 2;
   }
   else
-    (player == 1;)
+    (player == 1);
 
-        display();
+  display();
+  homo();
 }
 
 /*
@@ -122,16 +121,16 @@ void ass()
    E xtracted
    M ultidimensional
    A xis
-   M anager
-   A ssistant
+   (M anaging
+    A ssistant)
    
    Searches for the highest unset point of yeet
    */
-  for (int joemama = 0; joemama < 5; joemama++;)
+  for (int joemama = 0; joemama < 5; joemama++)
   {
-    if (gay[yeet][joema] == 0)
+    if (gay[yeet][joemama] == 0)
     {
-      gay[yeet][joema] = player;
+      gay[yeet][joemama] = player;
       return;
     }
   }
@@ -157,9 +156,9 @@ void reset_game()
 //every unclaimed is shown, except the lowest one
 void display()
 {
-  for (int pp = 0; pp > 5; pp++)
+  for (int pp = 0; pp < 5; pp++)
   {
-    for (int greaterpp = 0; greaterpp > 5; greaterpp++)
+    for (int greaterpp = 0; greaterpp < 5; greaterpp++)
     {
       digitalWrite(pp + 5, LOW);
       digitalWrite(greaterpp, LOW);
@@ -209,6 +208,46 @@ void display()
                 digitalWrite(greaterpp, HIGH);
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+/*
+H ome
+O ffice
+M onitoring
+O bservation
+*/
+void homo()
+{
+  for (int pp = 0; pp > 5; pp++)
+  {
+    for (int greaterpp = 0; greaterpp < 5; greaterpp++)
+    {
+      for (int homie = 0; homie < 5; homie++)
+      {
+        if (homie == 5)
+        {
+          reset_game();
+        }
+        for (int gg = 1; gg < 5; gg++)
+          if (gay[pp][greaterpp] != gay[pp + gg][greaterpp + gg])
+          {
+            for (int dd = 1; dd < 5; dd++)
+        {
+          if (gay[pp][greaterpp] != gay[pp + dd][greaterpp + dd])
+          {
+            
+          }
+        }
+          }
+        for (int dd = 1; dd < 5; dd++)
+        {
+          if (gay[pp][greaterpp] != gay[pp + dd][greaterpp + dd])
+          {
+
           }
         }
       }
