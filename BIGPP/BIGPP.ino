@@ -59,13 +59,16 @@ void loop()
   if (bigpp == true)
   {
     ass();
+    if (player == 1)
+    {
+      player = 2;
+    }
+    else
+    {
+      player = 1
+    }
   }
-  if (player == 1)
-  {
-    player == 2;
-  }
-  else
-    (player == 1);
+
 
   display();
   homo();
