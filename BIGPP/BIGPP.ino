@@ -53,7 +53,7 @@ void loop()
     if (Knopf == 2 && yeet != 5){yeet += 1;}
   }
   if (bigpp == true){ass();}
-  if (player == 1){player == 0;}
+  if (player == 1){player == 2;}
   else(player == 1;)
 
 
