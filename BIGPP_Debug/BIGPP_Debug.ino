@@ -74,12 +74,10 @@ void loop()
     }
     else
     {
-      player = 1
+      player = 1;
     }
     display();
   }
-
-  homo();
 }
 
 /*
@@ -91,11 +89,11 @@ void loop()
 */
 void CUM()
 { //überprüft, welche knöpfe gedrückt wurden
-  string input = Serial.readString();
+  String input = Serial.readString();
   if(input == "left"){Knopf = 1; return;}
   if(input == "right"){Knopf = 2; return;}
   if(input == "reset"){reset_game(); return;}
-  return 0;
+  return;
 }
 
 //functions
@@ -151,20 +149,20 @@ void display()
   Serial.println("Board:");
   //Print board
   Serial.println();
-  Serial.println("| 1 | 2 | 3 | 4 | 5 |")
+  Serial.println("| 1 | 2 | 3 | 4 | 5 |");
   Serial.println();
-  Serial.println("_____________________")
-  for(int x = 0, x < 5, x++)
+  Serial.println("_____________________");
+  for(int x = 0; x < 5; x++)
   {
-    Serial.print("| ")
-    for(int y = 0, y < 5, y++)
+    Serial.print("| ");
+    for(int y = 0; y < 5; y++)
     {
       Serial.print(gay[x][y]+" | ");
     }
     Serial.println();
     Serial.println();
   }
-  Serial.println("Currently Row" + yeet + "is selected");
+  Serial.println("Current Row" + yeet);
   //Print player
   Serial.println("Current player " + player);
 
