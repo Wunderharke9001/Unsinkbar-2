@@ -146,7 +146,7 @@ void reset_game()
   int player = 1;
 }
 
-display()
+void display()
 {
   Serial.println("Board:");
   //Print board
