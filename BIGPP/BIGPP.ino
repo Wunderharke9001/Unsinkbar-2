@@ -16,7 +16,7 @@
 int gay[5][5];
 int Knopf = 0;
 /*
-  Y-axis
+  Y axis
   E thernal
   E xtraction
   T erminal
@@ -49,14 +49,27 @@ void loop()
   CUM();
   if (Knopf != 0)
   {
-    if (Knopf == 1 && yeet != 0){yeet -= 1;}
-    if (Knopf == 2 && yeet != 5){yeet += 1;}
+    if (Knopf == 1 && yeet != 0)
+    {
+      yeet -= 1;
+    }
+    if (Knopf == 2 && yeet != 5)
+    {
+      yeet += 1;
+    }
   }
-  if (bigpp == true){ass();}
-  if (player == 1){player == 2;}
-  else(player == 1;)
+  if (bigpp == true)
+  {
+    ass();
+  }
+  if (player == 1)
+  {
+    player == 2;
+  }
+  else
+    (player == 1;)
 
-
+        display();
 }
 
 /*
@@ -68,11 +81,27 @@ Checks the users input and sets game variables accordingly
 */
 void CUM()
 { //überprüft, welche knöpfe gedrückt wurden
-  if (digitalRead(Dleft) == HIGH && digitalRead(Dright) == HIGH){reset_game();return;}
-  if (digitalRead(Dleft) == HIGH){Knopf = 1;}
-  if (digitalRead(Dright) == HIGH){Knopf = 2;}
-  if (digitalRead(hauptinput) == HIGH){bigpp = true;}
-  else{Knopf = 0;}
+  if (digitalRead(Dleft) == HIGH && digitalRead(Dright) == HIGH)
+  {
+    reset_game();
+    return;
+  }
+  if (digitalRead(Dleft) == HIGH)
+  {
+    Knopf = 1;
+  }
+  if (digitalRead(Dright) == HIGH)
+  {
+    Knopf = 2;
+  }
+  if (digitalRead(hauptinput) == HIGH)
+  {
+    bigpp = true;
+  }
+  else
+  {
+    Knopf = 0;
+  }
   return;
 }
 
@@ -93,10 +122,12 @@ void ass()
    E xtracted
    M ultidimensional
    A xis
+   M anager
+   A ssistant
    
    Searches for the highest unset point of yeet
    */
-  for (int joema = 0; joema < 5; joema++;)
+  for (int joemama = 0; joemama < 5; joemama++;)
   {
     if (gay[yeet][joema] == 0)
     {
@@ -121,8 +152,66 @@ void reset_game()
   int yeet = 0;
   int player = 1;
 }
-
+//all of the playing players are shown
+//everything of the enemie is shown, except the one next to the playing player
+//every unclaimed is shown, except the lowest one
 void display()
 {
-  
+  for (int pp = 0; pp > 5; pp++)
+  {
+    for (int greaterpp = 0; greaterpp > 5; greaterpp++)
+    {
+      digitalWrite(pp + 5, LOW);
+      digitalWrite(greaterpp, LOW);
+      if (gay[pp][greaterpp] == 0)
+      {
+        if (gay[pp][greaterpp - 1] == 0)
+        {
+          digitalWrite(pp + 5, HIGH);
+          digitalWrite(greaterpp, HIGH);
+        }
+      }
+      if (gay[pp][greaterpp] != 0)
+      {
+        if (player == 1)
+        {
+          if (gay[pp][greaterpp] == 1)
+          {
+            digitalWrite(pp + 5, HIGH);
+            digitalWrite(greaterpp, HIGH);
+          }
+          if (gay[pp][greaterpp] == 2)
+          {
+            if (gay[pp][greaterpp - 1] != 1)
+            {
+              if (gay[pp][greaterpp - 1] != 1)
+              {
+                digitalWrite(pp + 5, HIGH);
+                digitalWrite(greaterpp, HIGH);
+              }
+            }
+          }
+        }
+        if (player == 2)
+        {
+          if (gay[pp][greaterpp] == 2)
+          {
+            digitalWrite(pp + 5, HIGH);
+            digitalWrite(greaterpp, HIGH);
+          }
+          if (gay[pp][greaterpp] == 1)
+          {
+            if (gay[pp][greaterpp - 1] != 2)
+            {
+              if (gay[pp][greaterpp - 1] != 2)
+              {
+                digitalWrite(pp + 5, HIGH);
+                digitalWrite(greaterpp, HIGH);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
