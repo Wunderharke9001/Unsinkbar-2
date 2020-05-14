@@ -71,7 +71,7 @@ void loop()
     }
     else
     {
-      player = 1
+      player = 1;
     }
   }
 
