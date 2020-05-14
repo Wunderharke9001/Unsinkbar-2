@@ -8,7 +8,6 @@
    G ateway
    A lternative
    Y oucontroll
-
    Saves the gameplay
    */
 int gay[5][5];
@@ -24,10 +23,9 @@ int Knopf = 0;
   E thernal
   E xtraction
   T erminal
-
   Sets the collum
   */
-int yeet = 0;
+int yeet = 1;
 int player = 1;
 /*
 B iological
@@ -35,7 +33,6 @@ I nput
 G amma,
 P rime
 P oint
-
 inputs your decision
 */
 bool bigpp = false;
@@ -53,7 +50,7 @@ void loop()
   CUM();
   if (Knopf != 0)
   {
-    if (Knopf == 1 && yeet != 0)
+    if (Knopf == 1 && yeet != 1)
     {
       yeet -= 1;
     }
@@ -84,7 +81,6 @@ void loop()
 C heck
 U serinput
 M echanism
-
 Checks the users input and sets game variables accordingly
 */
 void CUM()
@@ -119,7 +115,6 @@ void CUM()
  A lternative
  S aving
  S ystem
-
  Inserts gameplay data
  */
 void ass()
@@ -157,7 +152,7 @@ void reset_game()
     }
   }
   //reset game variables
-  int yeet = 0;
+  int yeet = 1;
   int player = 1;
 }
 //all of the playing players are shown
