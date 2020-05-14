@@ -77,7 +77,7 @@ void loop()
 
 
   display();
-  homo();
+  homo1();
 }
 
 /*
@@ -229,37 +229,78 @@ O ffice
 M onitoring
 O bservation
 */
-void homo()
+void homo1()
 {
-  for (int pp = 0; pp > 5; pp++)
-  {
-    for (int greaterpp = 0; greaterpp < 5; greaterpp++)
+    for( int greaterpp = 0; greaterpp < 2; greaterpp++)
     {
-      for (int homie = 0; homie < 5; homie++)
+      for( int pp = 0; pp < 5; pp++)
       {
-        if (homie == 5)
-        {
-          reset_game();
-        }
-        for (int gg = 1; gg < 5; gg++)
-          if (gay[pp][greaterpp] != gay[pp + gg][greaterpp + gg])
+          for( int homie = 1; homie < 4; homie++)
           {
-            for (int dd = 1; dd < 5; dd++)
-        {
-          if (gay[pp][greaterpp] != gay[pp + dd][greaterpp + dd])
-          {
-            
+             if( homie == 4)
+             {reset_game;}
+             if(gay[greaterpp][pp + homie] != gay[greaterpp][pp])
+             {
+                homo2();
+                return;
+             }
           }
-        }
-          }
-        for (int dd = 1; dd < 5; dd++)
-        {
-          if (gay[pp][greaterpp] != gay[pp + dd][greaterpp + dd])
-          {
-
-          }
-        }
       }
     }
-  }
+}
+void homo2()
+{
+    for( int greaterpp = 0; greaterpp < 2; greaterpp++)
+    {
+      for( int pp = 0; pp < 5; pp++)
+      {
+          for( int homie = 1; homie < 4; homie++)
+          {
+             if( homie == 4)
+             {reset_game;}
+             if(gay[greaterpp + homie][pp] != gay[greaterpp][pp])
+             {
+                homo3();
+                return;
+             }
+          }
+      }
+    }
+}
+void homo3()
+{
+    for( int greaterpp = 0; greaterpp < 2; greaterpp++)
+    {
+      for( int pp = 0; pp < 5; pp++)
+      {
+          for( int homie = 1; homie < 4; homie++)
+          {
+             if( homie == 4)
+             {reset_game;}
+             if(gay[greaterpp + homie][pp + homie] != gay[greaterpp][pp])
+             {
+                homo4();
+                return;
+             }
+          }
+      }
+    }
+}
+void homo4()
+{
+    for( int greaterpp = 0; greaterpp < 2; greaterpp++)
+    {
+      for( int pp = 0; pp < 5; pp++)
+      {
+          for( int homie = 1; homie < 4; homie++)
+          {
+             if( homie == 4)
+             {reset_game;}
+             if(gay[greaterpp + homie][pp - homie] != gay[greaterpp][pp])
+             {
+                return;
+             }
+          }
+      }
+    }
 }
